@@ -22,11 +22,13 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Robot!';
 }
 
 function addFavoriteThings() {
   console.log('Called addFavoriteThings()');
+  let nameElement = document.querySelector('#favthings')
+  nameElement.innerText = 'Icecream \n Chocolate \n Candy \n Cake';
 
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
@@ -46,14 +48,22 @@ function replaceImage() {
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
   // - https://www.w3schools.com/jsref/met_element_setattribute.asp
+  let newImage = document.querySelector('#picture');
+  newImage.src = "https://i.ytimg.com/vi/KR9kjuuxRO0/maxresdefault.jpg"
 }
 
 function changeCodeStatus() {
   console.log('Called changeCodeStatus()');
 
+  let newMeme = document.querySelector('#codestatus');
+  newMeme.innerHTML = '<img src="https://media.tenor.com/images/47b81948be5023555549c01d88ae3289/tenor.gif"/>';
+
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
+
+
+
 }
 
 // Get a reference to the button w/ id="show-info-button"
@@ -89,6 +99,54 @@ informationForm.addEventListener('submit', function(event) {
   event.preventDefault(); // You will want this here. Remove it and see what changes.
 
   console.log('Form submitted');
+//first name
+  var nameValue = document.getElementById('fname').value;
+  console.log(nameValue);
+
+  firstname = document.querySelector('#firstname');
+  firstname.innerHTML = nameValue;
+
+  //last name
+  console.log('Form submitted');
+
+  var nameValue = document.getElementById('lname').value;
+  console.log(nameValue);
+
+  lastname = document.querySelector('#lastname');
+  lastname.innerHTML = nameValue;
+// cars
+  var nameValue3 = document.getElementById('cars').value;
+  console.log(nameValue3);
+
+  car = document.querySelector('#chosencar');
+  car.innerText = nameValue3;
+
+//Icecream
+  var nameValue4 = document.querySelector('input[name=icecream]:checked').value;
+  console.log(nameValue4);
+
+  icecream = document.querySelector('#icecreamstatus');
+  icecream.innerText = nameValue4;
+
+
+  //checks
+
+  function myFunction() {
+    // Get the checkbox
+    var checkBox = document.getElementById("humancheck");
+    // Get the output text
+    var text = document.getElementById("I am a human");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "form-check-label";
+    } else {
+      text.style.display = "none";
+    }
+  }
+
+
+
 
   // Your job:
   //   1. Get information typed into the form
@@ -96,6 +154,9 @@ informationForm.addEventListener('submit', function(event) {
 
   // Google things like:
   //   javascript form element get values
+
+  var nameValue = document.getElemenntById("fname").value;
+
 });
 
 /*************************************
@@ -111,18 +172,19 @@ informationForm.addEventListener('submit', function(event) {
 // then log something to the console
 
 // Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector('#________');
+let consoleLogButton = document.querySelector('#console-log-button');
 
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
   console.log('Change this text if you want!');
 });
 
-let makeBlueButton = document.querySelector('#________');
+let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
+makeBlueButton.style.color = 'blue';
 });
 
 // Adding an event listener to document means the "keydown" event
