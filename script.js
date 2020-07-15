@@ -138,15 +138,20 @@ informationForm.addEventListener('submit', function(event) {
     var text = document.getElementById("I am a human");
 
     // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-      text.style.display = "form-check-label";
-    } else {
-      text.style.display = "none";
-    }
+    // if (checkBox.checked == true){
+    //   text.style.display = "form-check-label";
+    // } else {
+    //   text.style.display = "none";
+    // }
+
+    let isHuman = document.querySelector("#humancheck").checked;
+    let isCoder = document.querySelector("#codercheck").checked;
+
+      if(isHuman){
+        document.querySelector("#checks").append("This is a human.");
+      }
+
   }
-
-
-
 
   // Your job:
   //   1. Get information typed into the form
@@ -156,6 +161,7 @@ informationForm.addEventListener('submit', function(event) {
   //   javascript form element get values
 
   var nameValue = document.getElemenntById("fname").value;
+
 
 });
 
@@ -184,21 +190,21 @@ makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
-makeBlueButton.style.color = 'blue';
+  document.getElementById('colorText').style.color = 'blue';
 });
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
 document.addeventListener('keydown', function() {
   // This is called whenever a user pressed any key.
-
   // Your job:
   //  1. Turn colorText red whenever a user presses the 'r' key
   //  2. Add your own keybind somewhere
-
   // See:
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
+    if (event.keyCode == 82)
+      document.body.style.color = 'red';
 });
 
 /*************************************
