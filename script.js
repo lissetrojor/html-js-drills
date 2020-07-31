@@ -100,7 +100,7 @@ informationForm.addEventListener('submit', function(event) {
 
   console.log('Form submitted');
 //first name
-  var nameValue = document.getElementById('fname').value;
+  let nameValue = document.getElementById('fname').value;
   console.log(nameValue);
 
   firstname = document.querySelector('#firstname');
@@ -137,12 +137,12 @@ informationForm.addEventListener('submit', function(event) {
     // Get the output text
     var text = document.getElementById("I am a human");
 
-    // If the checkbox is checked, display the output text
-    // if (checkBox.checked == true){
-    //   text.style.display = "form-check-label";
-    // } else {
-    //   text.style.display = "none";
-    // }
+    If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "form-check-label";
+    } else {
+      text.style.display = "none";
+    }
 
     let isHuman = document.querySelector("#humancheck").checked;
     let isCoder = document.querySelector("#codercheck").checked;
@@ -223,7 +223,17 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+let addThing = document.querySelector('.form');
 
+  addThing.addEventListener('submit', function(){
+  event.preventDefault(); // Terra added this in section 2, go look there if confused
+  console.log('New Thing'); //to keep track of it
+
+  let newToDoThing = document.createElement('li');
+  newToDoItem.textContent = document.querySelector('#toDoItem').value;
+
+  let toDoList = document.querySelector('#todos');
+  toDoList.appendChild(newToDoItem);
 /****************************************
  * Section 5 - setInterval + setTimeout *
  ****************************************
@@ -242,6 +252,18 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+let timer = setInterval(eachSecond, 1000);
+var count = 0;
+function eachSecond() {
+  count ++;
+  document.getElementById('seconds').innerText = count;
+}
+
+let delay = setTimeout(delayedDisplay, 20000);
+
+function delayedDisplay() {
+    document.getElementById('delayedDisplay').innerText = '20 secs';
+}
 
 /****************************************
  * Section 6 - Your own section!        *
